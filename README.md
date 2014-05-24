@@ -1,7 +1,7 @@
 # javax.persistence
 
-Clean-room definition of JPA API intended for transitory use in DataNucleus JPA development.
-See http://java.net/projects/jpa-spec/downloads for specification used to generate this API.
+Clean definition of JPA API intended for use with DataNucleus JPA since the JCP haven't provided an official JPA API jar.
+See http://java.net/projects/jpa-spec/downloads for the specification used to generate this API.
 
 
 ## KeyFacts
@@ -11,6 +11,8 @@ __Download(Releases)__ : [Maven Central](http://central.maven.org/maven2/org/dat
 
 
 ## Legal
+
+Takes the published API in the JPA specification(s), so consequently we apply the following license.
 
 Copyright (c) 2008, 2009, 2011 Oracle, Inc. All rights reserved.
 
