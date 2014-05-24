@@ -23,8 +23,6 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target({ TYPE })
 @Retention(RUNTIME)
 public @interface SqlResultSetMappings {
-	/**
-	 * One or more <code>SqlResultSetMapping</code> annotations.
-	 */
+
 	SqlResultSetMapping[] value();
 }

@@ -70,6 +70,7 @@ public @interface DiscriminatorValue {
      * representing the entity type.  If the <code>DiscriminatorType</code> is
      * <code>STRING</code>, the discriminator value default is the
      * entity name.
+     * @return value
      */
     String value();
 }

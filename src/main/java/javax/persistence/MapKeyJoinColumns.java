@@ -18,31 +18,28 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
  * Supports composite map keys that reference entities.
- * <p> The <code>MapKeyJoinColumns</code> annotation groups
- * <code>MapKeyJoinColumn</code> annotations.  When the
- * <code>MapKeyJoinColumns</code> annotation is used, both the
- * <code>name</code> and the <code>referencedColumnName</code>
- * elements must be specified in each of the grouped
+ * <p>
+ * The <code>MapKeyJoinColumns</code> annotation groups <code>MapKeyJoinColumn</code> annotations. When the
+ * <code>MapKeyJoinColumns</code> annotation is used, both the <code>name</code> and the
+ * <code>referencedColumnName</code> elements must be specified in each of the grouped
  * <code>MapKeyJoinColumn</code> annotations.
- *
  * @see MapKeyJoinColumn
- *
  * @since Java Persistence 2.0
  */
-@Target( { METHOD, FIELD })
+@Target({METHOD, FIELD})
 @Retention(RUNTIME)
-public @interface MapKeyJoinColumns {
-	/**
-	 * (Required) The map key join columns that are used to map to the entity
-	 * that is the map key.
-	 */
-	MapKeyJoinColumn[] value();
+public @interface MapKeyJoinColumns
+{
+    /**
+     * (Required) The map key join columns that are used to map to the entity that is the map key.
+     * @return The join cols
+     */
+    MapKeyJoinColumn[] value();
 
-	/**
-	 * (Optional) The foreign key constraint specification for the join columns. This is used only if table generation
-	 * is in effect.  Default is provider defined.
-	 *
-	 * @return The foreign key specification
-	 */
-	ForeignKey foreignKey() default @ForeignKey();
+    /**
+     * (Optional) The foreign key constraint specification for the join columns. This is used only if table
+     * generation is in effect. Default is provider defined.
+     * @return The foreign key specification
+     */
+    ForeignKey foreignKey() default @ForeignKey();
 }

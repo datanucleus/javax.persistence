@@ -53,54 +53,60 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  */
 @Target(TYPE)
 @Retention(RUNTIME)
-public @interface SecondaryTable {
-	/**
-	 * (Required) The name of the table.
-	 */
-	String name();
+public @interface SecondaryTable
+{
+    /**
+     * (Required) The name of the table.
+     * @return name
+     */
+    String name();
 
-	/**
-	 * (Optional) The catalog of the table.
-	 * <p> Defaults to the default catalog.
-	 */
-	String catalog() default "";
+    /**
+     * (Optional) The catalog of the table.
+     * <p>
+     * Defaults to the default catalog.
+     * @return catalog
+     */
+    String catalog() default "";
 
-	/**
-	 * (Optional) The schema of the table.
-	 * <p> Defaults to the default schema for user.
-	 */
-	String schema() default "";
+    /**
+     * (Optional) The schema of the table.
+     * <p>
+     * Defaults to the default schema for user.
+     * @return schema
+     */
+    String schema() default "";
 
-	/**
-	 * (Optional) The columns that are used to join with
-	 * the primary table.
-	 * <p> Defaults to the column(s) of the same name(s)
-	 * as the primary key column(s) in the primary table.
-	 */
-	PrimaryKeyJoinColumn[] pkJoinColumns() default { };
+    /**
+     * (Optional) The columns that are used to join with the primary table.
+     * <p>
+     * Defaults to the column(s) of the same name(s) as the primary key column(s) in the primary table.
+     * @return pk join cols
+     */
+    PrimaryKeyJoinColumn[] pkJoinColumns() default {};
 
-	/**
-	 * (Optional) Unique constraints that are to be placed on the
-	 * table. These are typically only used if table generation
-	 * is in effect. These constraints apply in addition to any
-	 * constraints specified by the <code>Column</code> and <code>JoinColumn</code>
-	 * annotations and constraints entailed by primary key mappings.
-	 * <p> Defaults to no additional constraints.
-	 */
-	UniqueConstraint[] uniqueConstraints() default { };
+    /**
+     * (Optional) Unique constraints that are to be placed on the table. These are typically only used if
+     * table generation is in effect. These constraints apply in addition to any constraints specified by the
+     * <code>Column</code> and <code>JoinColumn</code> annotations and constraints entailed by primary key
+     * mappings.
+     * <p>
+     * Defaults to no additional constraints.
+     * @return unique constraints
+     */
+    UniqueConstraint[] uniqueConstraints() default {};
 
-	/**
-	 * (Optional) Indexes for the table. These are only used if table generation is in effect.
-	 *
-	 * @return The indexes
-	 */
-	Index[] indexes() default {};
+    /**
+     * (Optional) Indexes for the table. These are only used if table generation is in effect.
+     * @return The indexes
+     */
+    Index[] indexes() default {};
 
-	/**
-	 * (Optional) Used to specify or control the generation of a foreign key constraint for the columns
-	 * corresponding to the pkJoinColumns element when table generation is in effect.
-	 *
-	 * @since Java Persistence 2.1
-	 */
+    /**
+     * (Optional) Used to specify or control the generation of a foreign key constraint for the columns
+     * corresponding to the pkJoinColumns element when table generation is in effect.
+     * @since Java Persistence 2.1
+     * @return fk
+     */
 	ForeignKey foreignKey() default @ForeignKey(ConstraintMode.PROVIDER_DEFAULT);
 }

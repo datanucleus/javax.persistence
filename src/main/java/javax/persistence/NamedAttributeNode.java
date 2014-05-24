@@ -24,6 +24,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 public @interface NamedAttributeNode {
 	/**
 	 * Specifies the name of the corresponding attribute.
+	 * @return value
 	 */
 	String value();
 
@@ -33,6 +34,7 @@ public @interface NamedAttributeNode {
 	 * the subgraph in the NamedSubgraph element.  If the referenced attribute is an entity which has entity
 	 * subclasses, there may be more than one NamedSubgraph element with this name, and the subgraph element is
 	 * considered to refer to all of these.
+	 * @return subgraph
 	 */
 	String subgraph() default "";
 
@@ -42,6 +44,7 @@ public @interface NamedAttributeNode {
 	 * the subgraph in the NamedSubgraph element.  If the referenced attribute is an entity which has entity
 	 * subclasses, there may be more than one NamedSubgraph element with this name, and the keySubgraph element is
 	 * considered to refer to all of these.
+	 * @return key subgraph
 	 */
 	String keySubgraph() default "";
 }

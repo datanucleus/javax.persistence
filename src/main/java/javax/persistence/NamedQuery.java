@@ -17,12 +17,10 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 import static javax.persistence.LockModeType.NONE;
 
 /**
- * Specifies a static, named query in the Java Persistence query language.
- * Query names are scoped to the persistence unit.
- * The <code>NamedQuery</code> annotation can be applied to an entity or mapped superclass.
- *
- * <p> The following is an example of the definition of a named query
- * in the Java Persistence query language:
+ * Specifies a static, named query in the Java Persistence query language. Query names are scoped to the
+ * persistence unit. The <code>NamedQuery</code> annotation can be applied to an entity or mapped superclass.
+ * <p>
+ * The following is an example of the definition of a named query in the Java Persistence query language:
  *
  * <pre>
  *    &#064;NamedQuery(
@@ -30,8 +28,8 @@ import static javax.persistence.LockModeType.NONE;
  *            query="SELECT c FROM Customer c WHERE c.name LIKE :custName"
  *    )
  * </pre>
- *
- * <p> The following is an example of the use of a named query:
+ * <p>
+ * The following is an example of the use of a named query:
  *
  * <pre>
  *    &#064;PersistenceContext
@@ -41,34 +39,36 @@ import static javax.persistence.LockModeType.NONE;
  *            .setParameter("custName", "Smith")
  *            .getResultList();
  * </pre>
- *
  * @since Java Persistence 1.0
  */
 @Target({TYPE})
 @Retention(RUNTIME)
-public @interface NamedQuery {
-
+public @interface NamedQuery
+{
     /**
-     * (Required) The name used to refer to the query with the {@link EntityManager}
-     * methods that create query objects.
+     * (Required) The name used to refer to the query with the {@link EntityManager} methods that create query
+     * objects.
+     * @return The name
      */
     String name();
 
-    /** (Required)
-     * The query string in the Java Persistence query language.
+    /**
+     * (Required) The query string in the Java Persistence query language.
+     * @return The query
      */
     String query();
 
     /**
-     * (Optional) The lock mode type to use in query execution.  If a <code>lockMode</code>
-     * other than <code>LockModeType.NONE</code> is specified, the query must be executed in
-     * a transaction.
+     * (Optional) The lock mode type to use in query execution. If a <code>lockMode</code> other than
+     * <code>LockModeType.NONE</code> is specified, the query must be executed in a transaction.
      * @since Java Persistence 2.0
+     * @return The lock mode
      */
     LockModeType lockMode() default NONE;
 
-    /** (Optional) Query properties and hints.  May include
-     * vendor-specific query hints.
+    /**
+     * (Optional) Query properties and hints. May include vendor-specific query hints.
+     * @return The hints
      */
     QueryHint[] hints() default {};
 }

@@ -31,6 +31,7 @@ public @interface Convert {
 	 * Specifies the converter to be applied. A value for this
 	 * element must be specified if multiple converters would
 	 * otherwise apply.
+	 * @return converter
 	 */
 	Class converter() default void.class;
 	/**
@@ -38,6 +39,7 @@ public @interface Convert {
 	 * is on an attribute of basic type or on an element collection of
 	 * basic type. In these cases, attributeName must not be
 	 * specified.
+	 * @return attribute name
 	 */
 	String attributeName() default "";
 
@@ -45,6 +47,7 @@ public @interface Convert {
 	 * Used to disable an auto-apply or inherited converter.
 	 * If disableConversion is true, the converter element should
 	 * not be specified.
+	 * @return disable
 	 */
 	boolean disableConversion() default false;
 }

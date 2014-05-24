@@ -38,19 +38,16 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  *
  * @since Java Persistence 1.0
  */
-@Target({ TYPE, METHOD, FIELD })
+@Target({TYPE, METHOD, FIELD})
 @Retention(RUNTIME)
-public @interface PrimaryKeyJoinColumns {
-	/**
-	 * One or more <code>PrimaryKeyJoinColumn</code> annotations.
-	 */
-	PrimaryKeyJoinColumn[] value();
+public @interface PrimaryKeyJoinColumns
+{
+    PrimaryKeyJoinColumn[] value();
 
-	/**
-	 * (Optional) The foreign key constraint specification for the join columns. This is used only if table generation
-	 * is in effect.  Default is provider defined.
-	 *
-	 * @return The foreign key specification
-	 */
-	ForeignKey foreignKey() default @ForeignKey();
+    /**
+     * (Optional) The foreign key constraint specification for the join columns. This is used only if table
+     * generation is in effect. Default is provider defined.
+     * @return The foreign key specification
+     */
+    ForeignKey foreignKey() default @ForeignKey();
 }

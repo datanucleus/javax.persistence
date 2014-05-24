@@ -61,6 +61,7 @@ public @interface GeneratedValue {
      * (Optional) The primary key generation strategy
      * that the persistence provider must use to
      * generate the annotated entity primary key.
+     * @return strategy
      */
     GenerationType strategy() default AUTO;
 
@@ -69,6 +70,7 @@ public @interface GeneratedValue {
      * to use as specified in the {@link SequenceGenerator}
      * or {@link TableGenerator} annotation.
      * <p> Defaults to the id generator supplied by persistence provider.
+     * @return generator
      */
     String generator() default "";
 }

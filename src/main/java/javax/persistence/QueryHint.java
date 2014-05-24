@@ -22,16 +22,19 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  *
  * @since Java Persistence 1.0
  */
-@Target({ })
+@Target({})
 @Retention(RUNTIME)
-public @interface QueryHint {
-	/**
-	 * Name of the hint.
-	 */
-	String name();
+public @interface QueryHint
+{
+    /**
+     * Name of the hint.
+     * @return name
+     */
+    String name();
 
-	/**
-	 * Value of the hint.
-	 */
-	String value();
+    /**
+     * Value of the hint.
+     * @return the hint
+     */
+    String value();
 }

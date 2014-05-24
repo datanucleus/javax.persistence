@@ -40,6 +40,7 @@ public @interface ForeignKey {
 
 	/**
 	 * (Optional) Used to specify whether a foreign key constraint should be generated when schema generation is in effect.
+	 * @return mode
 	 */
 	ConstraintMode value() default ConstraintMode.CONSTRAINT;
 }

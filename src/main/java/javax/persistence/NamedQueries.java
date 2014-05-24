@@ -28,6 +28,9 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Retention(RUNTIME)
 public @interface NamedQueries {
 
-    /** (Required) An array of <code>NamedQuery</code> annotations. */
+    /** 
+     * (Required) An array of <code>NamedQuery</code> annotations. 
+     * @return The queries
+     */
      NamedQuery [] value ();
 }

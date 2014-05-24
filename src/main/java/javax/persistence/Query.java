@@ -172,6 +172,7 @@ public interface Query {
 	 * @param value parameter value
 	 *
 	 * @return the same query instance
+	 * @param <T> type
 	 *
 	 * @throws IllegalArgumentException if the parameter
 	 * does not correspond to a parameter of the
@@ -350,6 +351,7 @@ public interface Query {
 	 * @param type type
 	 *
 	 * @return parameter object
+	 * @param <T> type
 	 *
 	 * @throws IllegalArgumentException if the parameter of the
 	 * specified name does not exist or is not assignable
@@ -389,6 +391,7 @@ public interface Query {
 	 * @param type type
 	 *
 	 * @return parameter object
+	 * @param <T> Type
 	 *
 	 * @throws IllegalArgumentException if the parameter with the
 	 * specified position does not exist or is not assignable
@@ -418,6 +421,7 @@ public interface Query {
 	 * @param param parameter object
 	 *
 	 * @return parameter value
+     * @param <T> Type
 	 *
 	 * @throws IllegalArgumentException if the parameter is not
 	 * a parameter of the query
@@ -517,6 +521,7 @@ public interface Query {
 	 * implements.
 	 *
 	 * @return an instance of the specified class
+     * @param <T> Type
 	 *
 	 * @throws PersistenceException if the provider does not support
 	 * the call

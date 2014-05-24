@@ -26,6 +26,5 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Retention(RUNTIME)
 public @interface EntityListeners {
 
-    /** The callback listener classes */
     Class[] value();
 }

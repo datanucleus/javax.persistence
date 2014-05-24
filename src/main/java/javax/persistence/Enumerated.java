@@ -24,7 +24,7 @@ import static javax.persistence.EnumType.ORDINAL;
  * conjunction with the <code>ElementCollection</code> annotation when the
  * element collection value is of basic type.  If the enumerated type
  * is not specified or the <code>Enumerated</code> annotation is not
- * used, the <code>EnumType</code> value is assumed to be <code>ORDINAL<code>.
+ * used, the <code>EnumType</code> value is assumed to be <code>ORDINAL</code>.
  *
  * <pre>
  *   Example:
@@ -51,6 +51,5 @@ import static javax.persistence.EnumType.ORDINAL;
 @Retention(RUNTIME)
 public @interface Enumerated {
 
-    /** (Optional) The type used in mapping an enum type. */
     EnumType value() default ORDINAL;
 }

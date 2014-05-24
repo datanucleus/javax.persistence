@@ -21,7 +21,7 @@ import static javax.persistence.InheritanceType.SINGLE_TABLE;
  * hierarchy. It is specified on the entity class that is the root of
  * the entity class hierarchy.  If the <code>Inheritance</code> annotation is not
  * specified or if no inheritance type is specified for an entity
- * class hierarchy, the <code>SINGLE_TABLE<code> mapping strategy is used.
+ * class hierarchy, the <code>SINGLE_TABLE</code> mapping strategy is used.
  *
  * <pre>
  *
@@ -42,6 +42,9 @@ import static javax.persistence.InheritanceType.SINGLE_TABLE;
 
 public @interface Inheritance {
 
-    /** The strategy to be used for the entity inheritance hierarchy. */
+    /** 
+     * The strategy to be used for the entity inheritance hierarchy. 
+     * @return strategy
+     */
     InheritanceType strategy() default SINGLE_TABLE;
 }

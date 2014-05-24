@@ -25,9 +25,6 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target({METHOD, FIELD, TYPE})
 @Retention(RUNTIME)
 public @interface Converts {
-	/**
-	 * The Convert mappings that are to be applied to the field or property.
-	 */
 	Convert[] value();
 }
 

@@ -15,22 +15,31 @@ import java.lang.annotation.Target;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
- * Specifies a parameter of a named stored procedure query. All parameters of a named stored procedure query must be specified.
- *
+ * Specifies a parameter of a named stored procedure query. All parameters of a named stored procedure query
+ * must be specified.
  * @since Java Persistence 2.1
- *
  * @see StoredProcedureQuery
  * @see ParameterMode
  */
 @Target({})
 @Retention(RUNTIME)
-public @interface StoredProcedureParameter {
-	/** The name of the parameter as defined by the stored procedure in the database. */
-	String name() default "";
+public @interface StoredProcedureParameter
+{
+    /**
+     * The name of the parameter as defined by the stored procedure in the database.
+     * @return name
+     */
+    String name() default "";
 
-	/** Specifies whether the parameter is an IN, INOUT, OUT, or REF_CURSOR parameter. */
-	ParameterMode mode() default ParameterMode.IN;
+    /**
+     * Specifies whether the parameter is an IN, INOUT, OUT, or REF_CURSOR parameter.
+     * @return mode of param
+     */
+    ParameterMode mode() default ParameterMode.IN;
 
-	/** JDBC type of the paramter. */
-	Class type();
+    /**
+     * JDBC type of the paramter.
+     * @return JDBC Type
+     */
+    Class type();
 }

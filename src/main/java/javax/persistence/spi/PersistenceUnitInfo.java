@@ -26,7 +26,7 @@ public interface PersistenceUnitInfo {
 
 	/**
 	 * Returns the name of the persistence unit. Corresponds to the
-	 * <code>name</code> attribute in the <code>persistence.xml<code> file.
+	 * <code>name</code> attribute in the <code>persistence.xml</code> file.
 	 *
 	 * @return the name of the persistence unit
 	 */

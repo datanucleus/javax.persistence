@@ -28,6 +28,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 public @interface NamedStoredProcedureQueries {
 	/**
 	 *  Array of NamedStoredProcedureQuery annotations.
+	 *  @return queries
 	 */
 	NamedStoredProcedureQuery[] value();
 }

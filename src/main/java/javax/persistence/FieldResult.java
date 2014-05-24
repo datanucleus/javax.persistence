@@ -26,7 +26,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  *           "o.quantity AS order_quantity, " +
  *           "o.item AS order_item, " +
  *         "FROM Order o, Item i " +
- *         "WHERE (order_quantity > 25) AND (order_item = i.id)",
+ *         "WHERE (order_quantity &gt; 25) AND (order_item = i.id)",
  *       "OrderResults");
  *
  *   &#064;SqlResultSetMapping(name="OrderResults",
@@ -45,12 +45,15 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 public @interface FieldResult {
 
-    /** Name of the persistent field or property of the class. */
+    /** Name of the persistent field or property of the class. 
+     * @return name
+     */
     String name();
 
     /**
      * Name of the column in the SELECT clause - i.e., column
      * aliases, if applicable.
+     * @return column
      */
     String column();
 }

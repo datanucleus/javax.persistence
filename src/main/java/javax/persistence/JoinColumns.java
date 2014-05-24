@@ -42,10 +42,6 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target({METHOD, FIELD})
 @Retention(RUNTIME)
 public @interface JoinColumns {
-
-    /**
-     * The join columns that map the relationship.
-     */
     JoinColumn[] value();
 
 	/**

@@ -39,11 +39,13 @@ public @interface UniqueConstraint {
 	 * if a name is not specified.
 	 *
 	 * @since Java Persistence 2.0
+	 * @return name
 	 */
 	String name() default "";
 
 	/**
 	 * (Required) An array of the column names that make up the constraint.
+	 * @return col names
 	 */
 	String[] columnNames();
 }

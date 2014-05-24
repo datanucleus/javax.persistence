@@ -17,22 +17,19 @@ import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
- * Specifies the type of the map key for associations of type
- * <code>java.util.Map</code>.  The map key can be a basic type, an
- * embeddable class, or an entity. If the map is specified using Java
- * generics, the <code>MapKeyClass</code> annotation and associated
- * type need not be specified; otherwise they must be specified.
- *
- * <p> The <code>MapKeyClass</code> annotation is used in conjunction
- * with <code>ElementCollection</code> or one of the collection-valued
- * relationship annotations (<code>OneToMany</code> or <code>ManyToMany</code>).
- * The <code>MapKey</code> annotation is not used when
- * <code>MapKeyClass</code> is specified and vice versa.
+ * Specifies the type of the map key for associations of type <code>java.util.Map</code>. The map key can be a
+ * basic type, an embeddable class, or an entity. If the map is specified using Java generics, the
+ * <code>MapKeyClass</code> annotation and associated type need not be specified; otherwise they must be
+ * specified.
+ * <p>
+ * The <code>MapKeyClass</code> annotation is used in conjunction with <code>ElementCollection</code> or one
+ * of the collection-valued relationship annotations (<code>OneToMany</code> or <code>ManyToMany</code>). The
+ * <code>MapKey</code> annotation is not used when <code>MapKeyClass</code> is specified and vice versa.
  *
  * <pre>
  *
  *    Example 1:
- *
+ * 
  *    &#064;Entity
  *    public class Item {
  *       &#064;Id int id;
@@ -42,11 +39,11 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  *       Map images;  // map from image name to image filename
  *       ...
  *    }
- *
+ * 
  *    Example 2:
- *
+ * 
  *    // MapKeyClass and target type of relationship can be defaulted
- *
+ * 
  *    &#064;Entity
  *    public class Item {
  *       &#064;Id int id;
@@ -55,9 +52,9 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  *       Map&#060;String, String&#062; images;
  *        ...
  *     }
- *
+ * 
  *     Example 3:
- *
+ * 
  *     &#064;Entity
  *     public class Company {
  *        &#064;Id int id;
@@ -66,11 +63,11 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  *        &#064;MapKeyClass(com.example.Division.class)
  *        Map organization;
  *     }
- *
+ * 
  *     Example 4:
- *
+ * 
  *     // MapKeyClass and target type of relationship are defaulted
- *
+ * 
  *     &#064;Entity
  *     public class Company {
  *        &#064;Id int id;
@@ -85,10 +82,13 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  * @see ManyToMany
  * @since Java Persistence 2.0
  */
-
-@Target( { METHOD, FIELD })
+@Target({METHOD, FIELD})
 @Retention(RUNTIME)
-public @interface MapKeyClass {
-	/**(Required) The type of the map key.*/
-	Class value();
+public @interface MapKeyClass
+{
+    /** 
+     * (Required) The type of the map key.
+     * @return The type
+     */
+    Class value();
 }

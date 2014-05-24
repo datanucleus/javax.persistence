@@ -60,31 +60,37 @@ public @interface NamedStoredProcedureQuery {
 	/**
 	 * The name used to refer to the query with the {@link EntityManager} methods that create stored
 	 * procedure query objects.
+	 * @return name
 	 */
 	String name();
 
 	/**
 	 * The name of the stored procedure in the database.
+	 * @return proc name
 	 */
 	String procedureName();
 
 	/**
 	 * Information about all parameters of the stored procedure.
+	 * @return params
 	 */
 	StoredProcedureParameter[] parameters() default {};
 
 	/**
 	 * The class or classes that are used to map the results.
+	 * @return result classes
 	 */
 	Class[] resultClasses() default {};
 
 	/**
 	 *  The names of one or more result set mappings, as defined in metadata.
+	 *  @return resultset mappings
 	 */
 	String[] resultSetMappings() default {};
 
 	/**
 	 * Query properties and hints.
+	 * @return any hints
 	 */
 	QueryHint[] hints() default {};
 }

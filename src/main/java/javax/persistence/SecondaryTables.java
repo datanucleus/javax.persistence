@@ -49,8 +49,5 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Retention(RUNTIME)
 
 public @interface SecondaryTables {
-	/**
-	 * (Required) The secondary tables for an entity.
-	 */
 	SecondaryTable[] value();
 }

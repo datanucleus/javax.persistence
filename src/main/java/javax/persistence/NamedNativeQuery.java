@@ -16,32 +16,41 @@ import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
- * Specifies a named native SQL query.
- * Query names are scoped to the persistence unit.
- * The <code>NamedNativeQuery</code> annotation can be applied to an
- * entity or mapped superclass.
- *
+ * Specifies a named native SQL query. Query names are scoped to the persistence unit. The
+ * <code>NamedNativeQuery</code> annotation can be applied to an entity or mapped superclass.
  * @since Java Persistence 1.0
  */
 @Target({TYPE})
 @Retention(RUNTIME)
-public @interface NamedNativeQuery {
-
+public @interface NamedNativeQuery
+{
     /**
-     * The name used to refer to the query with the {@link EntityManager}
-     * methods that create query objects.
+     * The name used to refer to the query with the {@link EntityManager} methods that create query objects.
+     * @return The name
      */
     String name();
 
-    /** The SQL query string. */
+    /** 
+     * The SQL query string. 
+     * @return The SQL string
+     */
     String query();
 
-    /** Query properties and hints.  (May include vendor-specific query hints.) */
+    /** 
+     * Query properties and hints. (May include vendor-specific query hints.) 
+     * @return any hints
+     */
     QueryHint[] hints() default {};
 
-    /** The class of the result. */
+    /**
+     * The class of the result. 
+     * @return The result class
+     */
     Class resultClass() default void.class;
 
-    /** The name of a {@link SqlResultSetMapping}, as defined in metadata. */
+    /** 
+     * The name of a {@link SqlResultSetMapping}, as defined in metadata. 
+     * @return ResultSet mapping
+     */
     String resultSetMapping() default "";
 }

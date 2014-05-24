@@ -30,6 +30,7 @@ public @interface PersistenceUnit {
 	 * (Optional) The name by which the entity manager factory is to be accessed
 	 * in the environment referencing context;  not needed when
 	 * dependency injection is used.
+	 * @return name
 	 */
 	String name() default "";
 
@@ -38,6 +39,7 @@ public @interface PersistenceUnit {
 	 * <code>persistence.xml</code> file. If specified, the
 	 * persistence unit for the entity manager factory that is
 	 * accessible in JNDI must have the same name.
+	 * @return unit name
 	 */
 	String unitName() default "";
 }

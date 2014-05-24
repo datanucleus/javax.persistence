@@ -31,6 +31,7 @@ public @interface PersistenceContext {
      * (Optional) The name by which the entity manager is to be accessed in the
      * environment referencing context; not needed when dependency
      * injection is used.
+     * @return Name
      */
     String name() default "";
 
@@ -39,12 +40,14 @@ public @interface PersistenceContext {
      * <code>persistence.xml</code> file. If the <code>unitName</code> element is
      * specified, the persistence unit for the entity manager that is
      * accessible in JNDI must have the same name.
+     * @return unit name
      */
     String unitName() default "";
 
     /**
      * (Optional) Specifies whether a transaction-scoped persistence context
      * or an extended persistence context is to be used.
+     * @return type
      */
     PersistenceContextType type() default PersistenceContextType.TRANSACTION;
 
@@ -54,6 +57,7 @@ public @interface PersistenceContext {
 	 * means of the EntityManager joinTransaction method
 	 *
 	 * @since Java Persistence 2.1
+	 * @return sync
 	 */
 	SynchronizationType synchronization() default SynchronizationType.SYNCHRONIZED;
 
@@ -62,6 +66,7 @@ public @interface PersistenceContext {
      * provider.  Vendor specific properties may be included in this
      * set of properties.  Properties that are not recognized by
      * a vendor are ignored.
+     * @return properties
      */
     PersistenceProperty[] properties() default {};
 }

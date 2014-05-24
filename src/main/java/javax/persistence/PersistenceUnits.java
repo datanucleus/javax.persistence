@@ -24,8 +24,6 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target({ TYPE })
 @Retention(RUNTIME)
 public @interface PersistenceUnits {
-	/**
-	 * (Required) One or more {@link PersistenceUnit} annotations.
-	 */
+
 	PersistenceUnit[] value();
 }
