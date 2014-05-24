@@ -144,6 +144,7 @@ public interface Subquery<T> extends AbstractQuery<T>, Expression<T> {
 	 * @param parentRoot a root of the containing query
 	 *
 	 * @return subquery root
+	 * @param <Y> Type
 	 */
 	<Y> Root<Y> correlate(Root<Y> parentRoot);
 
@@ -154,6 +155,8 @@ public interface Subquery<T> extends AbstractQuery<T>, Expression<T> {
 	 * @param parentJoin join object of the containing query
 	 *
 	 * @return subquery join
+     * @param <X> Type
+     * @param <Y> Type
 	 */
 	<X, Y> Join<X, Y> correlate(Join<X, Y> parentJoin);
 
@@ -164,6 +167,8 @@ public interface Subquery<T> extends AbstractQuery<T>, Expression<T> {
 	 * @param parentCollection join object of the containing query
 	 *
 	 * @return subquery join
+     * @param <X> Type
+     * @param <Y> Type
 	 */
 	<X, Y> CollectionJoin<X, Y> correlate(CollectionJoin<X, Y> parentCollection);
 
@@ -174,6 +179,8 @@ public interface Subquery<T> extends AbstractQuery<T>, Expression<T> {
 	 * @param parentSet join object of the containing query
 	 *
 	 * @return subquery join
+     * @param <X> Type
+     * @param <Y> Type
 	 */
 	<X, Y> SetJoin<X, Y> correlate(SetJoin<X, Y> parentSet);
 
@@ -184,6 +191,8 @@ public interface Subquery<T> extends AbstractQuery<T>, Expression<T> {
 	 * @param parentList join object of the containing query
 	 *
 	 * @return subquery join
+     * @param <X> Type
+     * @param <Y> Type
 	 */
 	<X, Y> ListJoin<X, Y> correlate(ListJoin<X, Y> parentList);
 
@@ -194,6 +203,9 @@ public interface Subquery<T> extends AbstractQuery<T>, Expression<T> {
 	 * @param parentMap join object of the containing query
 	 *
 	 * @return subquery join
+     * @param <X> Type
+     * @param <K> key Type
+     * @param <V> value Type
 	 */
 	<X, K, V> MapJoin<X, K, V> correlate(MapJoin<X, K, V> parentMap);
 

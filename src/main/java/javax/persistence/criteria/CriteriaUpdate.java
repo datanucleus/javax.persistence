@@ -54,6 +54,8 @@ public interface CriteriaUpdate<T> extends CommonAbstractCriteria
      * @param attribute attribute to be updated
      * @param value new value
      * @return the modified query
+     * @param <Y> type
+     * @param <X> type
      */
     <Y, X extends Y> CriteriaUpdate<T> set(SingularAttribute<? super T, Y> attribute, X value);
 
@@ -62,6 +64,7 @@ public interface CriteriaUpdate<T> extends CommonAbstractCriteria
      * @param attribute attribute to be updated
      * @param value new value
      * @return the modified query
+     * @param <Y> type
      */
     <Y> CriteriaUpdate<T> set(SingularAttribute<? super T, Y> attribute, Expression<? extends Y> value);
 
@@ -70,6 +73,8 @@ public interface CriteriaUpdate<T> extends CommonAbstractCriteria
      * @param attribute attribute to be updated
      * @param value new value
      * @return the modified query
+     * @param <Y> type
+     * @param <X> type
      */
     <Y, X extends Y> CriteriaUpdate<T> set(Path<Y> attribute, X value);
 
@@ -78,6 +83,7 @@ public interface CriteriaUpdate<T> extends CommonAbstractCriteria
      * @param attribute attribute to be updated
      * @param value new value
      * @return the modified query
+     * @param <Y> type
      */
     <Y> CriteriaUpdate<T> set(Path<Y> attribute, Expression<? extends Y> value);
 

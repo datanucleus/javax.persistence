@@ -15,10 +15,8 @@ import java.lang.annotation.Target;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
- * References name of a column in the SELECT clause of a SQL query -
- * i.e., column alias, if applicable. Scalar result types can be
- * included in the query result by specifying this annotation in
- * the metadata.
+ * References name of a column in the SELECT clause of a SQL query - i.e., column alias, if applicable. Scalar
+ * result types can be included in the query result by specifying this annotation in the metadata.
  *
  * <pre>
  *
@@ -29,9 +27,9 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  *           "o.item AS order_item, " +
  *           "i.name AS item_name, " +
  *         "FROM Order o, Item i " +
- *         "WHERE (order_quantity > 25) AND (order_item = i.id)",
+ *         "WHERE (order_quantity &gt; 25) AND (order_item = i.id)",
  *       "OrderResults");
- *
+ * 
  *   &#064;SqlResultSetMapping(name="OrderResults",
  *       entities={
  *           &#064;EntityResult(entityClass=com.acme.Order.class, fields={
@@ -42,18 +40,23 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  *           &#064;ColumnResult(name="item_name")}
  *       )
  * </pre>
- *
  * @see SqlResultSetMapping
- *
  * @since Java Persistence 1.0
  */
 @Target({})
 @Retention(RUNTIME)
-public @interface ColumnResult {
+public @interface ColumnResult
+{
 
-    /** (Required) The name of a column in the SELECT clause of a SQL query */
+    /**
+     * (Required) The name of a column in the SELECT clause of a SQL query
+     * @return Name
+     */
     String name();
 
-	/** (Optional) The Java type to which the column type is to be mapped. */
-	Class type() default void.class;
+    /**
+     * (Optional) The Java type to which the column type is to be mapped.
+     * @return type
+     */
+    Class type() default void.class;
 }

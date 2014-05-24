@@ -17,38 +17,12 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 /**
  * Used in conjunction with the {@link SqlResultSetMapping} annotation to map the SELECT clause of a SQL query
  * to a constructor.
- * <p/>
+ * <p>
  * Applies a constructor for the target class, passing in as arguments values from the specified columns. All
  * columns corresponding to arguments of the intended constructor must be specified using the {@code columns}
  * element of the {@code ConstructorResult} annotation in the same order as that of the argument list of the
  * constructor. Any entities returned as constructor results will be in either the new or detached state,
  * depending on whether a primary key is retrieved for the constructed object.
- * <p/>
- * Example:
- * 
- * <pre>
- *     Query q = em.createNativeQuery(
- *     		"SELECT c.id, c.name, COUNT(o) as orderCount, AVG(o.price) AS avgOrder " +
- *     			"FROM Customer c, Orders o " +
- *     			"WHERE o.cid = c.id " +
- *     			"GROUP BY c.id, c.name",
- *     		"CustomerDetailsResult"
- *    );
- * 
- *    @SqlResultSetMapping(
- *    		name="CustomerDetailsResult",
- *    		classes = {
- *    			@ConstructorResult(
- *    				targetClass=com.acme.CustomerDetails.class,
- *    				columns={
- *    					@ColumnResult(name="id"),
- *    					@ColumnResult(name="name"),
- *    					@ColumnResult(name="orderCount"),
- *    					@ColumnResult(name="avgOrder", type=Double.class)
- *    			    }
- *    		    )
- *    		}
- * </pre>
  */
 @Target(value = {})
 @Retention(RUNTIME)

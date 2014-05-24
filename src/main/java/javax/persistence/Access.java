@@ -18,18 +18,13 @@ import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
- * Used to specify an access type to be applied to an entity class,
- * mapped superclass, or embeddable class, or to a specific attribute
- * of such a class.
- *
+ * Used to specify an access type to be applied to an entity class, mapped superclass, or embeddable class, or
+ * to a specific attribute of such a class.
  * @since Java Persistence 2.0
  */
-@Target( { TYPE, METHOD, FIELD })
+@Target({TYPE, METHOD, FIELD})
 @Retention(RUNTIME)
-public @interface Access {
-
-    /**
-     * (Required)  Specification of field- or property-based access.
-     */
+public @interface Access
+{
     AccessType value();
 }

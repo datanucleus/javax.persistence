@@ -23,7 +23,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  * <pre>
  *
  *    Example:
- *
+ * 
  *    &#064;Embedded
  *    &#064;AttributeOverrides({
  *            &#064;AttributeOverride(name="startDate",
@@ -34,17 +34,13 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  *    public EmploymentPeriod getEmploymentPeriod() { ... }
  *
  * </pre>
- *
- *
  * @see AttributeOverride
- *
  * @since Java Persistence 1.0
  */
 @Target({TYPE, METHOD, FIELD})
 @Retention(RUNTIME)
+public @interface AttributeOverrides
+{
 
-public @interface AttributeOverrides {
-
-    /** (Required) One or more field or property mapping overrides. */
     AttributeOverride[] value();
 }
