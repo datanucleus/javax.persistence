@@ -19,7 +19,10 @@ package javax.persistence;
  * @since Java Persistence 1.0
  */
 public class PersistenceException extends RuntimeException {
-	/**
+
+    private static final long serialVersionUID = -8734504053550505412L;
+
+    /**
 	 * Constructs a new <code>PersistenceException</code> exception
 	 * with <code>null</code> as its detail message.
 	 */

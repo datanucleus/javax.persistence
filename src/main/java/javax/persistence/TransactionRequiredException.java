@@ -10,13 +10,13 @@
 package javax.persistence;
 
 /**
- * Thrown by the persistence provider when a transaction is required but is not
- * active.
- *
- * @since Java Persistence 1.0
+ * Thrown by the persistence provider when a transaction is required but is not active.
  */
 public class TransactionRequiredException extends PersistenceException {
-	/**
+
+    private static final long serialVersionUID = -6641420410049530500L;
+
+    /**
 	 * Constructs a new <code>TransactionRequiredException</code> exception with
 	 * <code>null</code> as its detail message.
 	 */

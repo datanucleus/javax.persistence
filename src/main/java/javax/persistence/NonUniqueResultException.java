@@ -24,19 +24,21 @@ package javax.persistence;
  */
 public class NonUniqueResultException extends PersistenceException {
 
-        /**
-         * Constructs a new <code>NonUniqueResultException</code> exception
-         * with <code>null</code> as its detail message.
-         */
+    private static final long serialVersionUID = 7600010385038884869L;
+
+    /**
+     * Constructs a new <code>NonUniqueResultException</code> exception
+     * with <code>null</code> as its detail message.
+     */
 	public NonUniqueResultException() {
 		super();
 	}
 
-        /**
-         * Constructs a new <code>NonUniqueResultException</code> exception
-         * with the specified detail message.
-         * @param   message   the detail message.
-         */
+    /**
+     * Constructs a new <code>NonUniqueResultException</code> exception
+     * with the specified detail message.
+     * @param   message   the detail message.
+     */
 	public NonUniqueResultException(String message) {
 		super(message);
 	}

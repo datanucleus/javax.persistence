@@ -19,6 +19,9 @@ package javax.persistence;
  * @since Java Persistence 2.0
  */
 public class LockTimeoutException extends PersistenceException {
+
+    private static final long serialVersionUID = -8272682194621776258L;
+
     /** The object that caused the exception */
     Object entity;
 

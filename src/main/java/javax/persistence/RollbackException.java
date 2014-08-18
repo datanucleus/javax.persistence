@@ -17,7 +17,10 @@ package javax.persistence;
  * @since Java Persistence 1.0
  */
 public class RollbackException extends PersistenceException {
-	/**
+
+    private static final long serialVersionUID = -967514938540919121L;
+
+    /**
 	 * Constructs a new <code>RollbackException</code> exception
 	 * with <code>null</code> as its detail message.
 	 */

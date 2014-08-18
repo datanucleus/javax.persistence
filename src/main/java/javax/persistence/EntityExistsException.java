@@ -25,6 +25,8 @@ package javax.persistence;
  */
 public class EntityExistsException extends PersistenceException {
 
+    private static final long serialVersionUID = -7744296070598705889L;
+
     /**
      * Constructs a new <code>EntityExistsException</code> exception with
      * <code>null</code> as its detail message.

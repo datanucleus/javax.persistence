@@ -24,7 +24,9 @@ package javax.persistence;
  */
 public class NoResultException extends PersistenceException {
 
-	/**
+    private static final long serialVersionUID = -2555296311540093566L;
+
+    /**
 	 * Constructs a new <code>NoResultException</code> exception with
 	 * <code>null</code> as its detail message.
 	 */

@@ -18,7 +18,10 @@ package javax.persistence;
  * @since Java Persistence 2.0
  */
 public class QueryTimeoutException extends PersistenceException {
-	/**
+
+    private static final long serialVersionUID = 8312549185527190719L;
+
+    /**
 	 * The query object that caused the exception
 	 */
 	Query query;

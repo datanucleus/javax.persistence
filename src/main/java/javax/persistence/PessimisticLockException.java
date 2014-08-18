@@ -18,7 +18,10 @@ package javax.persistence;
  * @since Java Persistence 2.0
  */
 public class PessimisticLockException extends PersistenceException {
-	/**
+
+    private static final long serialVersionUID = -7793076885622917367L;
+
+    /**
 	 * The object that caused the exception
 	 */
 	Object entity;
