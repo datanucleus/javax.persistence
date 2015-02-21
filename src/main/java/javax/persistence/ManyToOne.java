@@ -21,7 +21,7 @@ import static javax.persistence.FetchType.EAGER;
  * Defines a single-valued association to another entity class that has many-to-one multiplicity. It is not
  * normally necessary to specify the target entity explicitly since it can usually be inferred from the type
  * of the object being referenced. If the relationship is bidirectional, the non-owning <code>OneToMany</code>
- * entity side must used the <code>mappedBy</code> element to specify the relationship field or property of
+ * entity side must use the <code>mappedBy</code> element to specify the relationship field or property of
  * the entity that is the owner of the relationship.
  * <p>
  * The <code>ManyToOne</code> annotation may be used within an embeddable class to specify a relationship from
