@@ -10,20 +10,18 @@
 package javax.persistence.spi;
 
 /**
- * Specifies whether entity managers created by the {@link
- * javax.persistence.EntityManagerFactory} will be JTA or
- * resource-local entity managers.
- *
- * @since Java Persistence 1.0
+ * Specifies whether entity managers created by the {@link javax.persistence.EntityManagerFactory} will be JTA
+ * or resource-local entity managers.
  */
-public enum PersistenceUnitTransactionType {
-	/**
-	 * JTA entity managers will be created.
-	 */
-	JTA,
+public enum PersistenceUnitTransactionType
+{
+    /**
+     * JTA entity managers will be created.
+     */
+    JTA,
 
-	/**
-	 * Resource-local entity managers will be created.
-	 */
-	RESOURCE_LOCAL
+    /**
+     * Resource-local entity managers will be created.
+     */
+    RESOURCE_LOCAL
 }

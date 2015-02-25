@@ -11,10 +11,9 @@ package javax.persistence.spi;
 
 /**
  * Load states returned by the {@link ProviderUtil} SPI methods.
- *
- * @since Java Persistence 2.0
  */
-public enum LoadState {
+public enum LoadState 
+{
 	/**
 	 * The state of the element is known to have been loaded.
 	 */
