@@ -9,7 +9,7 @@
     </parent>
 
     <artifactId>javax.persistence</artifactId>
-    <version>2.1.0</version>
+    <version>2.1.1-SNAPSHOT</version>
 
     <name>JPA API</name>
     <description>The Java Persistence API (JPA) : a standard interface-based Java model abstraction of persistence, developed by the JCP.</description>
@@ -47,7 +47,6 @@
                     <instructions>
                         <Bundle-SymbolicName>javax.persistence;singleton:=true</Bundle-SymbolicName>
                         <Import-Package>
-                            org.datanucleus*;version="${dn.core.version}",
                             *;resolution:=optional
                         </Import-Package>
                     </instructions>
