@@ -42,7 +42,7 @@ public interface EntityGraph<T>
      * @param attribute attribute
      * @throws IllegalStateException if the EntityGraph has been statically defined
      */
-    public void addAttributeNodes(Attribute<T, ?>... attribute);
+    public void addAttributeNodes(Attribute<? super T, ?>... attribute);
 
     /**
      * Add a node to the graph that corresponds to a managed type. This allows for construction of multi-node
@@ -53,7 +53,7 @@ public interface EntityGraph<T>
      * @throws IllegalArgumentException if the attribute's target type is not a managed type
      * @throws IllegalStateException if the EntityGraph has been statically defined
      */
-    public <X> Subgraph<X> addSubgraph(Attribute<T, X> attribute);
+    public <X> Subgraph<X> addSubgraph(Attribute<? super T, X> attribute);
 
     /**
      * Add a node to the graph that corresponds to a managed type with inheritance. This allows for multiple
@@ -66,7 +66,7 @@ public interface EntityGraph<T>
      * @throws IllegalArgumentException if the attribute's target type is not a managed type
      * @throws IllegalStateException if the EntityGraph has been statically defined
      */
-    public <X> Subgraph<? extends X> addSubgraph(Attribute<T, X> attribute, Class<? extends X> type);
+    public <X> Subgraph<? extends X> addSubgraph(Attribute<? super T, X> attribute, Class<? extends X> type);
 
     /**
      * Add a node to the graph that corresponds to a managed type. This allows for construction of multi-node
@@ -104,7 +104,7 @@ public interface EntityGraph<T>
      * @throws IllegalArgumentException if the attribute's target type is not an entity
      * @throws IllegalStateException if this EntityGraph has been statically defined
      */
-    public <X> Subgraph<X> addKeySubgraph(Attribute<T, X> attribute);
+    public <X> Subgraph<X> addKeySubgraph(Attribute<? super T, X> attribute);
 
     /**
      * Add a node to the graph that corresponds to a map key that is a managed type with inheritance. This
@@ -117,7 +117,7 @@ public interface EntityGraph<T>
      * @throws IllegalArgumentException if the attribute's target type is not an entity
      * @throws IllegalStateException if this EntityGraph has been statically defined
      */
-    public <X> Subgraph<? extends X> addKeySubgraph(Attribute<T, X> attribute, Class<? extends X> type);
+    public <X> Subgraph<? extends X> addKeySubgraph(Attribute<? super T, X> attribute, Class<? extends X> type);
 
     /**
      * Add a node to the graph that corresponds to a map key that is a managed type. This allows for
