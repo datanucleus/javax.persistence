@@ -6,7 +6,7 @@ See http://java.net/projects/jpa-spec/downloads for the specification used to ge
 
 ## KeyFacts
 
-__Javadocs__ : [2.1.0](http://www.datanucleus.org/javadocs/javax.persistence/2.1.0/)  
+__Javadocs__ : [2.1](http://www.datanucleus.org/javadocs/javax.persistence/2.1/)  
 __Download(Releases)__ : [Maven Central](http://central.maven.org/maven2/org/datanucleus/javax.persistence)  
 
 
