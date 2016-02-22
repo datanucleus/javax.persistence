@@ -18,9 +18,7 @@ import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
- * Expresses a dependency on a container-managed {@link EntityManager} and its
- * associated persistence context.
- *
+ * Expresses a dependency on a container-managed {@link EntityManager} and its associated persistence context.
  * @since Java Persistence 1.0
  */
 @Target({TYPE, METHOD, FIELD})
@@ -51,15 +49,15 @@ public @interface PersistenceContext {
      */
     PersistenceContextType type() default PersistenceContextType.TRANSACTION;
 
-	/**
-	 * (Optional) Specifies whether the persistence context is always automatically synchronized with the current
-	 * JTA transaction or whether the persistence context must be explicitly joined to the current JTA transaction by
-	 * means of the EntityManager joinTransaction method
-	 *
-	 * @since Java Persistence 2.1
-	 * @return sync
-	 */
-	SynchronizationType synchronization() default SynchronizationType.SYNCHRONIZED;
+    /**
+     * (Optional) Specifies whether the persistence context is always automatically synchronized with the current
+     * JTA transaction or whether the persistence context must be explicitly joined to the current JTA transaction by
+     * means of the EntityManager joinTransaction method
+     *
+     * @since Java Persistence 2.1
+     * @return sync
+     */
+    SynchronizationType synchronization() default SynchronizationType.SYNCHRONIZED;
 
     /**
      * (Optional) Properties for the container or persistence

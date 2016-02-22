@@ -17,11 +17,8 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
  * Declares one or more {@link PersistenceContext} annotations.
- * It is used to express a dependency on container-managed
- * entity manager persistence contexts.
- *
- *@see PersistenceContext
- *
+ * It is used to express a dependency on container-managed entity manager persistence contexts.
+ * @see PersistenceContext
  * @since Java Persistence 1.0
  */
 @Target({TYPE})
@@ -29,5 +26,4 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 public @interface PersistenceContexts
 {
     PersistenceContext[] value();
-
 }

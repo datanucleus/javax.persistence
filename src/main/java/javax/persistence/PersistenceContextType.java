@@ -18,13 +18,13 @@ package javax.persistence;
  */
 public enum PersistenceContextType {
 
-	/**
-	 * Transaction-scoped persistence context
-	 */
-	TRANSACTION,
+    /**
+     * Transaction-scoped persistence context
+     */
+    TRANSACTION,
 
-	/**
-	 * Extended persistence context
-	 */
-	EXTENDED
+    /**
+     * Extended persistence context
+     */
+    EXTENDED
 }
