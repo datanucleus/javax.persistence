@@ -15,10 +15,8 @@ import javax.persistence.metamodel.PluralAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 
 /**
- * Represents a simple or compound attribute path from a bound type or collection, and is a "primitive"
- * expression.
+ * Represents a simple or compound attribute path from a bound type or collection, and is a "primitive" expression.
  * @param <X> the type referenced by the path
- * @since Java Persistence 2.0
  */
 public interface Path<X> extends Expression<X>
 {

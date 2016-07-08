@@ -24,12 +24,10 @@ import java.util.Set;
  * Paths of attributes belonging to the type.
  * @param <Z> the source type
  * @param <X> the target type
- * @since Java Persistence 2.0
  */
 @SuppressWarnings("hiding")
 public interface From<Z, X> extends Path<X>, FetchParent<Z, X>
 {
-
     /**
      * Return the joins that have been made from this bound type. Returns empty set if no joins have been made
      * from this bound type. Modifications to the set do not affect the query.

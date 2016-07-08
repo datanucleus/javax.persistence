@@ -12,18 +12,14 @@ package javax.persistence.criteria;
 import javax.persistence.metamodel.EntityType;
 
 /**
- * A root type in the from clause.
- * Query roots always reference entities.
- *
+ * A root type in the from clause. Query roots always reference entities.
  * @param <X> the entity type referenced by the root
- * @since Java Persistence 2.0
  */
-public interface Root<X> extends From<X, X> {
-
-	/**
-	 * Return the metamodel entity corresponding to the root.
-	 *
-	 * @return metamodel entity corresponding to the root
-	 */
-	EntityType<X> getModel();
+public interface Root<X> extends From<X, X>
+{
+    /**
+     * Return the metamodel entity corresponding to the root.
+     * @return metamodel entity corresponding to the root
+     */
+    EntityType<X> getModel();
 }

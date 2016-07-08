@@ -10,27 +10,23 @@
 package javax.persistence.criteria;
 
 /**
- * Defines the three types of joins.
- *
- * Right outer joins and right outer fetch joins are not required
- * to be supported in Java Persistence 2.0.  Applications that use
- * <code>RIGHT</code> join types will not be portable.
- *
- * @since Java Persistence 2.0
+ * Defines the three types of joins. Right outer joins and right outer fetch joins are not required to be
+ * supported in Java Persistence 2.0. Applications that use <code>RIGHT</code> join types will not be portable.
  */
-public enum JoinType {
-	/**
-	 * Inner join.
-	 */
-	INNER,
+public enum JoinType
+{
+    /**
+     * Inner join.
+     */
+    INNER,
 
-	/**
-	 * Left outer join.
-	 */
-	LEFT,
+    /**
+     * Left outer join.
+     */
+    LEFT,
 
-	/**
-	 * Right outer join.
-	 */
-	RIGHT
+    /**
+     * Right outer join.
+     */
+    RIGHT
 }

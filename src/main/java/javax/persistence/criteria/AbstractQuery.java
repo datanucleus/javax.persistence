@@ -21,11 +21,9 @@ import java.util.Set;
  * <p>
  * All queries may have: a conjunction of restrictions.
  * @param <T> the type of the result
- * @since Java Persistence 2.0
  */
 public interface AbstractQuery<T> extends CommonAbstractCriteria
 {
-
     /**
      * Create and add a query root corresponding to the given entity, forming a cartesian product with any
      * existing roots.
