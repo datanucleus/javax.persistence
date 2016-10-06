@@ -31,4 +31,18 @@ public interface Order
      * @return expression used for ordering
      */
     Expression<?> getExpression();
+
+    /**
+     * Set nulls to be positioned first in the ordering.
+     * <b>Note that this is a DataNucleus extension, post JPA2.1</b>
+     * @return This instance
+     */
+    Order nullsFirst();
+
+    /**
+     * Set nulls to be positioned last in the ordering.
+     * <b>Note that this is a DataNucleus extension, post JPA 2.1</b>
+     * @return This instance
+     */
+    Order nullsLast();
 }
