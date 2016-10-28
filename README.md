@@ -7,7 +7,7 @@ Note that this DataNucleus JPA API jar has some bug fixes and improvements not p
 
 ## KeyFacts
 
-__Javadocs__ : [2.2](http://www.datanucleus.org/javadocs/javax.persistence/2.2/),[2.1](http://www.datanucleus.org/javadocs/javax.persistence/2.1/)  
+__Javadocs__ : [2.2](http://www.datanucleus.org/javadocs/javax.persistence/2.2/), [2.1](http://www.datanucleus.org/javadocs/javax.persistence/2.1/)  
 __Download(Releases)__ : [Maven Central](http://central.maven.org/maven2/org/datanucleus/javax.persistence)  
 
 
