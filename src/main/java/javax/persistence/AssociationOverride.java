@@ -17,6 +17,8 @@ import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
+import java.lang.annotation.Repeatable;
+
 /**
  * Used to override a mapping for an entity relationship.
  * <p>
@@ -102,6 +104,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  */
 @Target({TYPE, METHOD, FIELD})
 @Retention(RUNTIME)
+@Repeatable(AssociationOverrides.class)
 public @interface AssociationOverride
 {
 

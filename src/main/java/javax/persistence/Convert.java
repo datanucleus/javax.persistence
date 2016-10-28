@@ -17,6 +17,8 @@ import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
+import java.lang.annotation.Repeatable;
+
 /**
  * The Convert annotation is used to specify the conversion of a Basic field or
  * property. It is not necessary to use the Basic annotation or corresponding XML
@@ -26,6 +28,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  */
 @Target({METHOD, FIELD, TYPE})
 @Retention(RUNTIME)
+@Repeatable(Converts.class)
 public @interface Convert {
 	/**
 	 * Specifies the converter to be applied. A value for this

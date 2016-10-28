@@ -15,6 +15,8 @@ import java.lang.annotation.Target;
 import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
+import java.lang.annotation.Repeatable;
+
 /**
  * The NamedEntityGraph annotation is used to define a named entity graph. The entity graph may be retrieved
  * by name using the EntityManagerFactory interface. The entity graph may be used to specify the path and
@@ -24,6 +26,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  */
 @Target({TYPE})
 @Retention(RUNTIME)
+@Repeatable(NamedEntityGraphs.class)
 public @interface NamedEntityGraph
 {
     /**

@@ -15,6 +15,8 @@ import java.lang.annotation.Target;
 import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
+import java.lang.annotation.Repeatable;
+
 /**
  * Specifies a secondary table for the annotated entity
  * class. Specifying one or more secondary tables indicates that the
@@ -53,6 +55,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  */
 @Target(TYPE)
 @Retention(RUNTIME)
+@Repeatable(SecondaryTables.class)
 public @interface SecondaryTable
 {
     /**

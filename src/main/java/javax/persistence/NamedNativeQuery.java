@@ -15,6 +15,8 @@ import java.lang.annotation.Target;
 import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
+import java.lang.annotation.Repeatable;
+
 /**
  * Specifies a named native SQL query. Query names are scoped to the persistence unit. The
  * <code>NamedNativeQuery</code> annotation can be applied to an entity or mapped superclass.
@@ -22,6 +24,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  */
 @Target({TYPE})
 @Retention(RUNTIME)
+@Repeatable(NamedNativeQueries.class)
 public @interface NamedNativeQuery
 {
     /**

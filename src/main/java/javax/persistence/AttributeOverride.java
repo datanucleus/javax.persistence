@@ -17,6 +17,8 @@ import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
+import java.lang.annotation.Repeatable;
+
 /**
  * Used to override the mapping of a <code>Basic</code> (whether explicit or default) property or field or
  * <code>Id</code> property or field.
@@ -119,6 +121,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  */
 @Target({TYPE, METHOD, FIELD})
 @Retention(RUNTIME)
+@Repeatable(AttributeOverrides.class)
 public @interface AttributeOverride
 {
 

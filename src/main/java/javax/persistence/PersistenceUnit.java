@@ -17,6 +17,8 @@ import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
+import java.lang.annotation.Repeatable;
+
 /**
  * Expresses a dependency on an {@link EntityManagerFactory} and its
  * associated persistence unit.
@@ -25,6 +27,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  */
 @Target({ TYPE, METHOD, FIELD })
 @Retention(RUNTIME)
+@Repeatable(PersistenceUnits.class)
 public @interface PersistenceUnit {
 	/**
 	 * (Optional) The name by which the entity manager factory is to be accessed

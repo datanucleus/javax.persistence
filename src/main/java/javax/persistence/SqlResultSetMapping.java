@@ -15,6 +15,8 @@ import java.lang.annotation.Target;
 import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
+import java.lang.annotation.Repeatable;
+
 /**
  * Specifies the mapping of the result of a native SQL query.
  *
@@ -44,6 +46,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  */
 @Target({TYPE})
 @Retention(RUNTIME)
+@Repeatable(SqlResultSetMappings.class)
 public @interface SqlResultSetMapping
 {
     /**

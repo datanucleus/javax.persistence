@@ -17,12 +17,15 @@ import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
+import java.lang.annotation.Repeatable;
+
 /**
  * Expresses a dependency on a container-managed {@link EntityManager} and its associated persistence context.
  * @since Java Persistence 1.0
  */
 @Target({TYPE, METHOD, FIELD})
 @Retention(RUNTIME)
+@Repeatable(PersistenceContexts.class)
 public @interface PersistenceContext {
 
     /**

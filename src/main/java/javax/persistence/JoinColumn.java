@@ -16,6 +16,8 @@ import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
+import java.lang.annotation.Repeatable;
+
 /**
  * Specifies a column for joining an entity association or element collection. If the <code>JoinColumn</code>
  * annotation itself is defaulted, a single join column is assumed and the default values apply.
@@ -44,6 +46,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  */
 @Target({METHOD, FIELD})
 @Retention(RUNTIME)
+@Repeatable(JoinColumns.class)
 public @interface JoinColumn
 {
 

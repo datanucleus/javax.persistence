@@ -16,6 +16,8 @@ import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
+import java.lang.annotation.Repeatable;
+
 /**
  * Specifies a mapping to an entity that is a map key. The map key join column is in the collection table,
  * join table, or table of the target entity that is used to represent the map. If no
@@ -81,6 +83,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  */
 @Target({METHOD, FIELD})
 @Retention(RUNTIME)
+@Repeatable(MapKeyJoinColumns.class)
 public @interface MapKeyJoinColumn
 {
     /**

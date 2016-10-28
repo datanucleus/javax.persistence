@@ -15,6 +15,8 @@ import java.lang.annotation.Target;
 import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
+import java.lang.annotation.Repeatable;
+
 /**
  * Specifies and names a stored procedure, its parameters, and its result type.
  *
@@ -56,6 +58,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  */
 @Target(TYPE)
 @Retention(RUNTIME)
+@Repeatable(NamedStoredProcedureQueries.class)
 public @interface NamedStoredProcedureQuery {
 	/**
 	 * The name used to refer to the query with the {@link EntityManager} methods that create stored
