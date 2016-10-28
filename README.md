@@ -2,11 +2,12 @@
 
 Clean definition of JPA API intended for use with DataNucleus JPA since the JCP haven't provided an official JPA API jar.
 See http://java.net/projects/jpa-spec/downloads for the specification used to generate this API.
+Note that this DataNucleus JPA API jar has some bug fixes and improvements not present in "standard" JPA.
 
 
 ## KeyFacts
 
-__Javadocs__ : [2.1](http://www.datanucleus.org/javadocs/javax.persistence/2.1/)  
+__Javadocs__ : [2.2](http://www.datanucleus.org/javadocs/javax.persistence/2.2/),[2.1](http://www.datanucleus.org/javadocs/javax.persistence/2.1/)  
 __Download(Releases)__ : [Maven Central](http://central.maven.org/maven2/org/datanucleus/javax.persistence)  
 
 
