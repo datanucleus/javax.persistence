@@ -1168,6 +1168,49 @@ public interface CriteriaBuilder
      */
     Expression<java.sql.Time> currentTime();
 
+    // TODO Also allow for java.time types?
+    /**
+     * Create expression for getting the year from a date.
+     * @param x date expression
+     * @return expression for the year
+     */
+    Expression<Integer> year(Expression<? extends java.util.Date> x);
+
+    /**
+     * Create expression for getting the month from a date.
+     * @param x date expression
+     * @return expression for the month
+     */
+    Expression<Integer> month(Expression<? extends java.util.Date> x);
+
+    /**
+     * Create expression for getting the day (of the month) from a date.
+     * @param x date expression
+     * @return expression for the day
+     */
+    Expression<Integer> day(Expression<? extends java.util.Date> x);
+
+    /**
+     * Create expression for getting the hour from a date.
+     * @param x date expression
+     * @return expression for the hour
+     */
+    Expression<Integer> hour(Expression<? extends java.util.Date> x);
+
+    /**
+     * Create expression for getting the minute from a date.
+     * @param x date expression
+     * @return expression for the minute
+     */
+    Expression<Integer> minute(Expression<? extends java.util.Date> x);
+
+    /**
+     * Create expression for getting the second from a date.
+     * @param x date expression
+     * @return expression for the second
+     */
+    Expression<Integer> second(Expression<? extends java.util.Date> x);
+
     // in builders:
 
     /**
