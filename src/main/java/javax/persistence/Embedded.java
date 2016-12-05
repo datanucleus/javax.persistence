@@ -48,4 +48,12 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target({METHOD, FIELD})
 @Retention(RUNTIME)
 public @interface Embedded {
+
+    /**
+     * (Optional) The entity class that is the target of the association.
+     * <p>
+     * Defaults to the type of the field or property that stores the association.
+     * @return target entity
+     */
+    Class targetEntity() default void.class;
 }
