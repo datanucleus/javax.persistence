@@ -14,6 +14,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Stream;
 
 /**
  * Interface used to control query execution.
@@ -25,29 +26,41 @@ import java.util.Set;
 public interface Query {
 
 	/**
-	 * Execute a SELECT query and return the query results
-	 * as an untyped List.
+	 * Execute a SELECT query and return the query results as an untyped List.
 	 *
 	 * @return a list of the results
-	 *
-	 * @throws IllegalStateException if called for a Java
-	 * Persistence query language UPDATE or DELETE statement
-	 * @throws QueryTimeoutException if the query execution exceeds
-	 * the query timeout value set and only the statement is
-	 * rolled back
-	 * @throws TransactionRequiredException if a lock mode has
-	 * been set and there is no transaction
-	 * @throws PessimisticLockException if pessimistic locking
-	 * fails and the transaction is rolled back
-	 * @throws LockTimeoutException if pessimistic locking
-	 * fails and only the statement is rolled back
-	 * @throws PersistenceException if the query execution exceeds
-	 * the query timeout value set and the transaction
-	 * is rolled back
+	 * @throws IllegalStateException if called for a Java Persistence query language UPDATE or DELETE statement
+	 * @throws QueryTimeoutException if the query execution exceeds the query timeout value set and only the statement is rolled back
+	 * @throws TransactionRequiredException if a lock mode has been set and there is no transaction
+	 * @throws PessimisticLockException if pessimistic locking fails and the transaction is rolled back
+	 * @throws LockTimeoutException if pessimistic locking fails and only the statement is rolled back
+	 * @throws PersistenceException if the query execution exceeds the query timeout value set and the transaction is rolled back
 	 */
 	List getResultList();
 
-	/**
+    /**
+     * Execute a SELECT query and return the query results as an untyped <code>java.util.stream.Stream</code>.
+     * By default this method delegates to <code>getResultList().stream()</code>,
+     * however persistence provider may choose to override this method to provide additional capabilities.
+     *
+     * @return a stream of the results
+     * @throws IllegalStateException if called for a Java Persistence query language UPDATE or DELETE statement
+     * @throws QueryTimeoutException if the query execution exceeds the query timeout value set and only the statement is rolled back
+     * @throws TransactionRequiredException if a lock mode other than <code>NONE</code> has been set and there is no transaction
+     *         or the persistence context has not been joined to the transaction
+     * @throws PessimisticLockException if pessimistic locking fails and the transaction is rolled back
+     * @throws LockTimeoutException if pessimistic locking fails and only the statement is rolled back
+     * @throws PersistenceException if the query execution exceeds the query timeout value set and the transaction is rolled back
+     * @see Stream
+     * @see #getResultList()
+     * @since 2.2
+     */
+    default Stream getResultStream() 
+    {
+        return getResultList().stream();
+    }
+
+    /**
 	 * Execute a SELECT query that returns a single untyped result.
 	 *
 	 * @return the result
