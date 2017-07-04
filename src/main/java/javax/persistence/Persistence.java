@@ -11,6 +11,7 @@ package javax.persistence;
 
 import javax.persistence.spi.LoadState;
 import javax.persistence.spi.PersistenceProvider;
+import javax.persistence.spi.PersistenceProviderResolver;
 import javax.persistence.spi.PersistenceProviderResolverHolder;
 import java.util.HashSet;
 import java.util.List;
@@ -22,12 +23,6 @@ import java.util.Set;
  */
 public class Persistence
 {
-    @Deprecated
-    public static final String PERSISTENCE_PROVIDER = "javax.persistence.spi.PeristenceProvider";
-
-    @Deprecated
-    protected static final Set<PersistenceProvider> providers = new HashSet<PersistenceProvider>();
-
     /**
      * Create and return an EntityManagerFactory for the named persistence unit.
      * @param persistenceUnitName The name of the persistence unit
@@ -93,46 +88,86 @@ public class Persistence
     }
 
     /**
-     * @return Returns a <code>PersistenceUtil</code> instance.
+     * Return the PersistenceUtil instance
+     * @return PersistenceUtil instance
+     * @since Java Persistence 2.0
      */
     public static PersistenceUtil getPersistenceUtil()
     {
-        return util;
+        return new PersistenceUtilImpl();
     }
 
-    private static PersistenceUtil util = new PersistenceUtil()
+    /**
+     * Implementation of PersistenceUtil interface
+     * @since Java Persistence 2.0
+     */
+    private static class PersistenceUtilImpl implements PersistenceUtil
     {
         public boolean isLoaded(Object entity, String attributeName)
         {
-            List<PersistenceProvider> providers = Persistence.getProviders();
+            PersistenceProviderResolver resolver = PersistenceProviderResolverHolder.getPersistenceProviderResolver();
+
+            List<PersistenceProvider> providers = resolver.getPersistenceProviders();
+
             for (PersistenceProvider provider : providers)
             {
-                final LoadState state = provider.getProviderUtil().isLoadedWithoutReference(entity, attributeName);
-                if (state == LoadState.UNKNOWN)
-                    continue;
-                return state == LoadState.LOADED;
+                LoadState loadstate = provider.getProviderUtil().isLoadedWithoutReference(entity, attributeName);
+                if (loadstate == LoadState.LOADED)
+                {
+                    return true;
+                }
+                else if (loadstate == LoadState.NOT_LOADED)
+                {
+                    return false;
+                } // else continue
             }
+
+            // None of the providers could determine the load state try isLoadedWithReference
             for (PersistenceProvider provider : providers)
             {
-                final LoadState state = provider.getProviderUtil().isLoadedWithReference(entity, attributeName);
-                if (state == LoadState.UNKNOWN)
-                    continue;
-                return state == LoadState.LOADED;
+                LoadState loadstate = provider.getProviderUtil().isLoadedWithReference(entity, attributeName);
+                if (loadstate == LoadState.LOADED)
+                {
+                    return true;
+                }
+                else if (loadstate == LoadState.NOT_LOADED)
+                {
+                    return false;
+                } // else continue
             }
+
+            // None of the providers could determine the load state.
             return true;
         }
 
-        public boolean isLoaded(Object object)
+        public boolean isLoaded(Object entity)
         {
-            List<PersistenceProvider> providers = Persistence.getProviders();
+            PersistenceProviderResolver resolver = PersistenceProviderResolverHolder.getPersistenceProviderResolver();
+
+            List<PersistenceProvider> providers = resolver.getPersistenceProviders();
+
             for (PersistenceProvider provider : providers)
             {
-                final LoadState state = provider.getProviderUtil().isLoaded(object);
-                if (state == LoadState.UNKNOWN)
-                    continue;
-                return state == LoadState.LOADED;
+                LoadState loadstate = provider.getProviderUtil().isLoaded(entity);
+                if (loadstate == LoadState.LOADED)
+                {
+                    return true;
+                }
+                else if (loadstate == LoadState.NOT_LOADED)
+                {
+                    return false;
+                } // else continue
             }
+            // None of the providers could determine the load state
             return true;
         }
-    };
+    }
+
+    /** Only present for TCK compatibility allegedly, but then that is private. */
+    @Deprecated
+    public static final String PERSISTENCE_PROVIDER = "javax.persistence.spi.PeristenceProvider";
+
+    /** Only present for TCK compatibility allegedly, but then that is private. */
+    @Deprecated
+    protected static final Set<PersistenceProvider> providers = new HashSet<PersistenceProvider>();
 }
