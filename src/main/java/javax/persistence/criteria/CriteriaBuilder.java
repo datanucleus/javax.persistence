@@ -825,8 +825,7 @@ public interface CriteriaBuilder
      */
     <E, C extends Collection<E>> Predicate isNotMember(E elem, Expression<C> collection);
 
-    // get the values and keys collections of the Map, which may then
-    // be passed to size(), isMember(), isEmpty(), etc
+    // get the values and keys collections of the Map, which may then be passed to size(), isMember(), isEmpty(), etc
 
     /**
      * Create an expression that returns the values of a map.
@@ -1171,6 +1170,7 @@ public interface CriteriaBuilder
     // TODO Also allow for java.time types?
     /**
      * Create expression for getting the year from a date.
+     * <b>Note that this is a DataNucleus extension, post JPA2.1</b>
      * @param x date expression
      * @return expression for the year
      */
@@ -1178,6 +1178,7 @@ public interface CriteriaBuilder
 
     /**
      * Create expression for getting the month from a date.
+     * <b>Note that this is a DataNucleus extension, post JPA2.1</b>
      * @param x date expression
      * @return expression for the month
      */
@@ -1185,6 +1186,7 @@ public interface CriteriaBuilder
 
     /**
      * Create expression for getting the day (of the month) from a date.
+     * <b>Note that this is a DataNucleus extension, post JPA2.1</b>
      * @param x date expression
      * @return expression for the day
      */
@@ -1192,6 +1194,7 @@ public interface CriteriaBuilder
 
     /**
      * Create expression for getting the hour from a date.
+     * <b>Note that this is a DataNucleus extension, post JPA2.1</b>
      * @param x date expression
      * @return expression for the hour
      */
@@ -1199,6 +1202,7 @@ public interface CriteriaBuilder
 
     /**
      * Create expression for getting the minute from a date.
+     * <b>Note that this is a DataNucleus extension, post JPA2.1</b>
      * @param x date expression
      * @return expression for the minute
      */
@@ -1206,6 +1210,7 @@ public interface CriteriaBuilder
 
     /**
      * Create expression for getting the second from a date.
+     * <b>Note that this is a DataNucleus extension, post JPA2.1</b>
      * @param x date expression
      * @return expression for the second
      */
