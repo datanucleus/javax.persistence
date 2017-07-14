@@ -10,8 +10,7 @@
 package javax.persistence.metamodel;
 
 /**
- * Instances of the type <code>MapAttribute</code> represent
- * persistent <code>java.util.Map</code>-valued attributes.
+ * Instances of the type <code>MapAttribute</code> represent persistent <code>java.util.Map</code>-valued attributes.
  *
  * @param <X> The type the represented Map belongs to
  * @param <K> The type of the key of the represented Map

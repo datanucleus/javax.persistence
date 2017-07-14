@@ -17,11 +17,9 @@ import javax.persistence.metamodel.SingularAttribute;
 import java.util.Set;
 
 /**
- * Represents a bound type, usually an entity that appears in the from clause, but may also be an embeddable
- * belonging to an entity in the from clause.
+ * Represents a bound type, usually an entity that appears in the from clause, but may also be an embeddable belonging to an entity in the from clause.
  * <p>
- * Serves as a factory for Joins of associations, embeddables, and collections belonging to the type, and for
- * Paths of attributes belonging to the type.
+ * Serves as a factory for Joins of associations, embeddables, and collections belonging to the type, and for Paths of attributes belonging to the type.
  * @param <Z> the source type
  * @param <X> the target type
  */

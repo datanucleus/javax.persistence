@@ -14,8 +14,8 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * The <code>AbstractQuery</code> interface defines functionality that is common to both top-level queries and
- * subqueries. It is not intended to be used directly in query construction.
+ * The <code>AbstractQuery</code> interface defines functionality that is common to both top-level queries and subqueries. 
+ * It is not intended to be used directly in query construction.
  * <p>
  * All queries must have: a set of root entities (which may in turn own joins).
  * <p>
@@ -25,8 +25,7 @@ import java.util.Set;
 public interface AbstractQuery<T> extends CommonAbstractCriteria
 {
     /**
-     * Create and add a query root corresponding to the given entity, forming a cartesian product with any
-     * existing roots.
+     * Create and add a query root corresponding to the given entity, forming a cartesian product with any existing roots.
      * @param entityClass the entity class
      * @return query root corresponding to the given entity
      * @param <X> Type
@@ -34,8 +33,7 @@ public interface AbstractQuery<T> extends CommonAbstractCriteria
     <X> Root<X> from(Class<X> entityClass);
 
     /**
-     * Create and add a query root corresponding to the given entity, forming a cartesian product with any
-     * existing roots.
+     * Create and add a query root corresponding to the given entity, forming a cartesian product with any existing roots.
      * @param entity metamodel entity representing the entity of type X
      * @return query root corresponding to the given entity
      * @param <X> Type

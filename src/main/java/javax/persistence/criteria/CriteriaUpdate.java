@@ -13,8 +13,7 @@ import javax.persistence.metamodel.EntityType;
 import javax.persistence.metamodel.SingularAttribute;
 
 /**
- * The CriteriaUpdate interface defines functionality for performing bulk update operations using the Criteria
- * API.
+ * The CriteriaUpdate interface defines functionality for performing bulk update operations using the Criteria API.
  * <p>
  * Criteria API bulk update operations map directly to database update operations, bypassing any optimistic
  * locking checks. Portable applications using bulk update operations must manually update the value of the

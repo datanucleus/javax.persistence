@@ -10,8 +10,7 @@
 package javax.persistence.metamodel;
 
 /**
- * Instances of the type <code>MappedSuperclassType</code> represent mapped
- * superclass types.
+ * Instances of the type <code>MappedSuperclassType</code> represent mapped superclass types.
  *
  * @param <X> The represented entity type
  * @since Java Persistence 2.0

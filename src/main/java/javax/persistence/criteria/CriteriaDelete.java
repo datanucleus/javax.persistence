@@ -12,11 +12,10 @@ package javax.persistence.criteria;
 import javax.persistence.metamodel.EntityType;
 
 /**
- * The CriteriaDelete interface defines functionality for performing bulk delete operations using the Criteria
- * API
+ * The CriteriaDelete interface defines functionality for performing bulk delete operations using the Criteria API
  * <p>
- * Criteria API bulk delete operations map directly to database delete operations. The persistence context is
- * not synchronized with the result of the bulk delete.
+ * Criteria API bulk delete operations map directly to database delete operations. 
+ * The persistence context is not synchronized with the result of the bulk delete.
  * <p>
  * A CriteriaDelete object must have a single root.
  * @param <T> the entity type that is the target of the delete

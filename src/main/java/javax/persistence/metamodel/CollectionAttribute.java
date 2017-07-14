@@ -10,8 +10,7 @@
 package javax.persistence.metamodel;
 
 /**
- * Instances of the type <code>CollectionAttribute</code> represent persistent
- * <code>java.util.Collection</code>-valued attributes.
+ * Instances of the type <code>CollectionAttribute</code> represent persistent <code>java.util.Collection</code>-valued attributes.
  *
  * @param <X> The type the represented Collection belongs to
  * @param <E> The element type of the represented Collection

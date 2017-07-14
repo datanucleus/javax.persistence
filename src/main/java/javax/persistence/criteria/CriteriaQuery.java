@@ -13,8 +13,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * The <code>CriteriaQuery</code> interface defines functionality that is specific
- * to top-level queries.
+ * The <code>CriteriaQuery</code> interface defines functionality that is specific to top-level queries.
  *
  * @param <T>  the type of the defined result
  * @since Java Persistence 2.0
