@@ -46,5 +46,11 @@ public enum GenerationType {
      * in the event that it does not support schema generation
      * or cannot create the schema resource at runtime.
      */
-    AUTO
+    AUTO,
+
+    /**
+     * Use JRE java.util.UUID to generate a value.
+     * <b>Added by DataNucleus</b>.
+     */
+    UUID
 }
