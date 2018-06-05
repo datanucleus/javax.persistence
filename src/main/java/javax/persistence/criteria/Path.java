@@ -47,7 +47,7 @@ public interface Path<X> extends Expression<X>
      * @param <E> Type
      * @param <C> Collection type
      */
-    <E, C extends java.util.Collection<E>> Expression<C> get(PluralAttribute</*? super */X, C, E> collection);
+    <E, C extends java.util.Collection<E>> Expression<C> get(PluralAttribute<? super X, C, E> collection);
 
     /**
      * Create a path corresponding to the referenced map-valued attribute.
@@ -57,7 +57,7 @@ public interface Path<X> extends Expression<X>
      * @param <V> Value Type
      * @param <M> Map type
      */
-    <K, V, M extends java.util.Map<K, V>> Expression<M> get(MapAttribute</*? super */X, K, V> map);
+    <K, V, M extends java.util.Map<K, V>> Expression<M> get(MapAttribute<? super X, K, V> map);
 
     /**
      * Create an expression corresponding to the type of the path.
