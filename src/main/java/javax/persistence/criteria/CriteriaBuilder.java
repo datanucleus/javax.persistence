@@ -1167,55 +1167,6 @@ public interface CriteriaBuilder
      */
     Expression<java.sql.Time> currentTime();
 
-    // TODO Also allow for java.time types?
-    /**
-     * Create expression for getting the year from a date.
-     * <b>Note that this is a DataNucleus extension, post JPA2.1</b>
-     * @param x date expression
-     * @return expression for the year
-     */
-    Expression<Integer> year(Expression<? extends java.util.Date> x);
-
-    /**
-     * Create expression for getting the month from a date.
-     * <b>Note that this is a DataNucleus extension, post JPA2.1</b>
-     * @param x date expression
-     * @return expression for the month
-     */
-    Expression<Integer> month(Expression<? extends java.util.Date> x);
-
-    /**
-     * Create expression for getting the day (of the month) from a date.
-     * <b>Note that this is a DataNucleus extension, post JPA2.1</b>
-     * @param x date expression
-     * @return expression for the day
-     */
-    Expression<Integer> day(Expression<? extends java.util.Date> x);
-
-    /**
-     * Create expression for getting the hour from a date.
-     * <b>Note that this is a DataNucleus extension, post JPA2.1</b>
-     * @param x date expression
-     * @return expression for the hour
-     */
-    Expression<Integer> hour(Expression<? extends java.util.Date> x);
-
-    /**
-     * Create expression for getting the minute from a date.
-     * <b>Note that this is a DataNucleus extension, post JPA2.1</b>
-     * @param x date expression
-     * @return expression for the minute
-     */
-    Expression<Integer> minute(Expression<? extends java.util.Date> x);
-
-    /**
-     * Create expression for getting the second from a date.
-     * <b>Note that this is a DataNucleus extension, post JPA2.1</b>
-     * @param x date expression
-     * @return expression for the second
-     */
-    Expression<Integer> second(Expression<? extends java.util.Date> x);
-
     // in builders:
 
     /**
@@ -1512,4 +1463,73 @@ public interface CriteriaBuilder
      * @param <T> type
      */
     <X, T extends X> Root<T> treat(Root<X> root, Class<T> type);
+
+    // ----------------- DN EXTENSIONS ---------------------
+
+    // TODO Also allow for java.time types?
+    /**
+     * Create expression for getting the year from a date.
+     * <b>Note that this is a DataNucleus extension, post JPA2.2</b>
+     * @param x date expression
+     * @return expression for the year
+     */
+    Expression<Integer> year(Expression<? extends java.util.Date> x);
+
+    /**
+     * Create expression for getting the month from a date.
+     * <b>Note that this is a DataNucleus extension, post JPA2.2</b>
+     * @param x date expression
+     * @return expression for the month
+     */
+    Expression<Integer> month(Expression<? extends java.util.Date> x);
+
+    /**
+     * Create expression for getting the day (of the month) from a date.
+     * <b>Note that this is a DataNucleus extension, post JPA2.2</b>
+     * @param x date expression
+     * @return expression for the day
+     */
+    Expression<Integer> day(Expression<? extends java.util.Date> x);
+
+    /**
+     * Create expression for getting the hour from a date.
+     * <b>Note that this is a DataNucleus extension, post JPA2.2</b>
+     * @param x date expression
+     * @return expression for the hour
+     */
+    Expression<Integer> hour(Expression<? extends java.util.Date> x);
+
+    /**
+     * Create expression for getting the minute from a date.
+     * <b>Note that this is a DataNucleus extension, post JPA2.2</b>
+     * @param x date expression
+     * @return expression for the minute
+     */
+    Expression<Integer> minute(Expression<? extends java.util.Date> x);
+
+    /**
+     * Create expression for getting the second from a date.
+     * <b>Note that this is a DataNucleus extension, post JPA2.2</b>
+     * @param x date expression
+     * @return expression for the second
+     */
+    Expression<Integer> second(Expression<? extends java.util.Date> x);
+
+    /**
+     * Method to round a numeric expression.
+     * <b>Note that this is a DataNucleus extension, post JPA2.2</b>
+     * @param expr The numeric expression
+     * @param digits The digits to round to (0 = integer)
+     * @return The rounded expression
+     */
+    Expression<Number> round(Expression<Number> expr, Integer digits);
+
+    Expression<Number> cos(Expression<Number> expr);
+    Expression<Number> sin(Expression<Number> expr);
+    Expression<Number> tan(Expression<Number> expr);
+    Expression<Number> acos(Expression<Number> expr);
+    Expression<Number> asin(Expression<Number> expr);
+    Expression<Number> atan(Expression<Number> expr);
+    Expression<Integer> ceil(Expression<Number> expr);
+    Expression<Integer> floor(Expression<Number> expr);
 }
