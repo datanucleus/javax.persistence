@@ -21,8 +21,8 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  * This annotation must be specified for persistent fields or properties of type <code>java.util.Date</code>
  * and <code>java.util.Calendar</code>. It may only be specified for fields or properties of these types.
  * <p>
- * The <code>Temporal</code> annotation may be used in conjunction with the {@link Basic} annotation, the
- * {@link Id} annotation, or the {@link ElementCollection} annotation (when the element collection value is of
+ * The <code>Temporal</code> annotation may be used in conjunction with the {@link Basic} annotation, 
+ * the {@link Id} annotation, or the {@link ElementCollection} annotation when the element collection value is of
  * such a temporal type.
  *
  * <pre>

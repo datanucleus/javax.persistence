@@ -19,17 +19,15 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 import static javax.persistence.FetchType.EAGER;
 
 /**
- * The simplest type of mapping to a database column. The <code>Basic</code> annotation can be applied to a
- * persistent property or instance variable of any of the following types: Java primitive types, wrappers of
- * the primitive types, <code>String</code>, <code>java.math.BigInteger</code>,
- * <code>java.math.BigDecimal</code>, <code>java.util.Date</code>, <code>java.util.Calendar</code>,
- * <code>java.sql.Date</code>, <code>java.sql.Time</code>, <code>java.sql.Timestamp</code>,
- * <code>byte[]</code>, <code>Byte[]</code>, <code>char[]</code>, <code>Character[]</code>, enums, and any
- * other type that implements <code>java.io.Serializable</code>.
+ * The simplest type of mapping to a database column. 
+ * The <code>Basic</code> annotation can be applied to a persistent property or instance variable of any of the following types: 
+ * Java primitive types, wrappers of the primitive types, <code>String</code>, <code>java.math.BigInteger</code>,
+ * <code>java.math.BigDecimal</code>, <code>java.util.Date</code>, <code>java.util.Calendar</code>, <code>java.sql.Date</code>, 
+ * <code>java.sql.Time</code>, <code>java.sql.Timestamp</code>, <code>byte[]</code>, <code>Byte[]</code>, <code>char[]</code>, 
+ * <code>Character[]</code>, enums, and any other type that implements <code>java.io.Serializable</code>.
  * <p>
- * The use of the <code>Basic</code> annotation is optional for persistent fields and properties of these
- * types. If the <code>Basic</code> annotation is not specified for such a field or property, the default
- * values of the <code>Basic</code> annotation will apply.
+ * The use of the <code>Basic</code> annotation is optional for persistent fields and properties of these types. 
+ * If the <code>Basic</code> annotation is not specified for such a field or property, the default values of the <code>Basic</code> annotation will apply.
  *
  * <pre>
  *    Example 1:
