@@ -16,8 +16,10 @@ package javax.persistence.metamodel;
  * @param <Y> The type of the represented attribute
  * @since Java Persistence 2.0
  */
-public interface Attribute<X, Y> {
-	public static enum PersistentAttributeType {
+public interface Attribute<X, Y>
+{
+	public static enum PersistentAttributeType
+	{
 		/**
 		 * Many-to-one association
 		 */

@@ -15,5 +15,6 @@ package javax.persistence.metamodel;
  * @param <X> The represented type.
  * @since Java Persistence 2.0
  */
-public interface EmbeddableType<X> extends ManagedType<X> {
+public interface EmbeddableType<X> extends ManagedType<X>
+{
 }

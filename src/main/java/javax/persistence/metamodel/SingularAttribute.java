@@ -10,8 +10,7 @@
 package javax.persistence.metamodel;
 
 /**
- * Instances of the type <code>SingularAttribute</code> represents persistent
- * single-valued properties or fields.
+ * Instances of the type <code>SingularAttribute</code> represents persistent single-valued properties or fields.
  *
  * @param <X> The type containing the represented attribute
  * @param <T> The type of the represented attribute

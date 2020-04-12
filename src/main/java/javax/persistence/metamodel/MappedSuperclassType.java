@@ -15,5 +15,6 @@ package javax.persistence.metamodel;
  * @param <X> The represented entity type
  * @since Java Persistence 2.0
  */
-public interface MappedSuperclassType<X> extends IdentifiableType<X> {
+public interface MappedSuperclassType<X> extends IdentifiableType<X> 
+{
 }

@@ -16,8 +16,10 @@ package javax.persistence.metamodel;
  * @param <X>  The type of the represented object or attribute
  * @since Java Persistence 2.0
  */
-public interface Type<X> {
-	public static enum PersistenceType {
+public interface Type<X>
+{
+	public static enum PersistenceType
+	{
 		/**
 		 * Entity
 		 */

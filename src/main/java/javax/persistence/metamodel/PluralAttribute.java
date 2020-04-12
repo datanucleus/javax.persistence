@@ -10,16 +10,17 @@
 package javax.persistence.metamodel;
 
 /**
- * Instances of the type <code>PluralAttribute</code> represent
- * persistent collection-valued attributes.
+ * Instances of the type <code>PluralAttribute</code> represent persistent collection-valued attributes.
  *
  * @param <X> The type the represented collection belongs to
  * @param <C> The type of the represented collection
  * @param <E> The element type of the represented collection
  * @since Java Persistence 2.0
  */
-public interface PluralAttribute<X, C, E> extends Attribute<X, C>, Bindable<E> {
-	public static enum CollectionType {
+public interface PluralAttribute<X, C, E> extends Attribute<X, C>, Bindable<E>
+{
+	public static enum CollectionType
+	{
 		/**
 		 * Collection-valued attribute
 		 */

@@ -15,10 +15,10 @@ package javax.persistence.metamodel;
  * @param <X> The represented entity type.
  * @since Java Persistence 2.0
  */
-public interface EntityType<X> extends IdentifiableType<X>, Bindable<X> {
+public interface EntityType<X> extends IdentifiableType<X>, Bindable<X>
+{
 	/**
 	 * Return the entity name.
-	 *
 	 * @return entity name
 	 */
 	String getName();

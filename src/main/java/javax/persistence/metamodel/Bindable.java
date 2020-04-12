@@ -16,8 +16,10 @@ package javax.persistence.metamodel;
  * @param <T>  The type of the represented object or attribute
  * @since Java Persistence 2.0
  */
-public interface Bindable<T> {
-	public static enum BindableType {
+public interface Bindable<T>
+{
+	public static enum BindableType
+	{
 		/**
 		 * Single-valued attribute type
 		 */
