@@ -1,7 +1,7 @@
 # javax.persistence
 
 Clean definition of JPA API intended for use with DataNucleus JPA since the JCP haven't provided an official JPA API jar.
-See http://java.net/projects/jpa-spec/downloads for the specification used to generate this API.
+See https://github.com/javaee/jpa-spec for the specification used to generate this API.
 Note that this DataNucleus JPA API jar has some bug fixes and improvements not present in "standard" JPA.
 
 
