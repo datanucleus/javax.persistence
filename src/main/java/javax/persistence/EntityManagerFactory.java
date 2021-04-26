@@ -25,8 +25,8 @@ import java.util.Map;
  *
  * @since Java Persistence 1.0
  */
-public interface EntityManagerFactory {
-
+public interface EntityManagerFactory extends AutoCloseable
+{
     /**
      * Create a new application-managed <code>EntityManager</code>. This method returns a new
      * <code>EntityManager</code> instance each time it is invoked. The <code>isOpen</code> method will return

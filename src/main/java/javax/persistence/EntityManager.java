@@ -35,7 +35,7 @@ import java.util.Map;
  * @see PersistenceContext
  * @since Java Persistence 1.0
  */
-public interface EntityManager
+public interface EntityManager extends AutoCloseable
 {
 
     /**
