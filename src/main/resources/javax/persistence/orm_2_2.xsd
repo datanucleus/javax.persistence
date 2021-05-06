@@ -959,7 +959,7 @@
     <xsd:annotation>
       <xsd:documentation>
 
-        public enum GenerationType { TABLE, SEQUENCE, IDENTITY, AUTO };
+        public enum GenerationType { TABLE, SEQUENCE, IDENTITY, AUTO, UUID };
 
       </xsd:documentation>
     </xsd:annotation>
@@ -968,6 +968,7 @@
       <xsd:enumeration value="SEQUENCE"/>
       <xsd:enumeration value="IDENTITY"/>
       <xsd:enumeration value="AUTO"/>
+      <xsd:enumeration value="UUID"/> <!-- DN addition -->
     </xsd:restriction>
   </xsd:simpleType>
 
