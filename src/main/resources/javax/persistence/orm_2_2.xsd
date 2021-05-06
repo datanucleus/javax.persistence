@@ -968,7 +968,7 @@
       <xsd:enumeration value="SEQUENCE"/>
       <xsd:enumeration value="IDENTITY"/>
       <xsd:enumeration value="AUTO"/>
-      <xsd:enumeration value="UUID"/> <!-- DN addition -->
+      <xsd:enumeration value="UUID"/> <!-- DN EXTENSION -->
     </xsd:restriction>
   </xsd:simpleType>
 
