@@ -120,6 +120,15 @@ public interface CriteriaBuilder
     <N extends Number> Expression<Double> avg(Expression<N> x);
 
     /**
+     * Create an aggregate expression applying the avg distinct operation.
+     * **DATANUCLEUS ADDED**
+     * @param x expression representing input value to avg operation
+     * @return avg distinct expression
+     * @param <N> number type
+     */
+    <N extends Number> Expression<Double> avgDistinct(Expression<N> x);
+
+    /**
      * Create an aggregate expression applying the sum operation.
      * @param x expression representing input value to sum operation
      * @return sum expression
@@ -128,16 +137,23 @@ public interface CriteriaBuilder
     <N extends Number> Expression<N> sum(Expression<N> x);
 
     /**
-     * Create an aggregate expression applying the sum operation to an Integer-valued expression, returning a
-     * Long result.
+     * Create an aggregate expression applying the sum distinct operation.
+     * **DATANUCLEUS ADDED**
+     * @param x expression representing input value to sum operation
+     * @return sum distinct expression
+     * @param <N> number type
+     */
+    <N extends Number> Expression<N> sumDistinct(Expression<N> x);
+
+    /**
+     * Create an aggregate expression applying the sum operation to an Integer-valued expression, returning a Long result.
      * @param x expression representing input value to sum operation
      * @return sum expression
      */
     Expression<Long> sumAsLong(Expression<Integer> x);
 
     /**
-     * Create an aggregate expression applying the sum operation to a Float-valued expression, returning a
-     * Double result.
+     * Create an aggregate expression applying the sum operation to a Float-valued expression, returning a Double result.
      * @param x expression representing input value to sum operation
      * @return sum expression
      */
@@ -152,12 +168,30 @@ public interface CriteriaBuilder
     <N extends Number> Expression<N> max(Expression<N> x);
 
     /**
+     * Create an aggregate expression applying the numerical max distinct operation.
+     * **DATANUCLEUS ADDED**
+     * @param x expression representing input value to max operation
+     * @return max distinct expression
+     * @param <N> number type
+     */
+    <N extends Number> Expression<N> maxDistinct(Expression<N> x);
+
+    /**
      * Create an aggregate expression applying the numerical min operation.
      * @param x expression representing input value to min operation
      * @return min expression
      * @param <N> number type
      */
     <N extends Number> Expression<N> min(Expression<N> x);
+
+    /**
+     * Create an aggregate expression applying the numerical min distinct operation.
+     * **DATANUCLEUS ADDED**
+     * @param x expression representing input value to min operation
+     * @return min distinct expression
+     * @param <N> number type
+     */
+    <N extends Number> Expression<N> minDistinct(Expression<N> x);
 
     /**
      * Create an aggregate expression for finding the greatest of the values (strings, dates, etc).
